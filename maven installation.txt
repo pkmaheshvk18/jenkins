@@ -1,0 +1,41 @@
+#!/bin/bash
+
+
+
+
+
+sudo yum update -y
+
+sudo yum install -y wget
+
+
+
+MAVEN_VERSION="3.9.4"  
+
+
+
+echo Download and extract Maven
+
+wget "https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz"
+
+tar -zxvf "apache-maven-3.9.4-bin.tar.gz"
+
+
+
+
+
+sudo mv "apache-maven-3.9.4" /opt/
+
+
+
+echo "export MAVEN_HOME=/opt/apache-maven-3.9.4" >> ~/.bashrc
+
+echo "export PATH=\$MAVEN_HOME/bin:\$PATH" >> ~/.bashrc
+
+
+
+source ~/.bashrc
+
+
+
+mvn --version
